@@ -1,0 +1,15 @@
+<h2>Employees</h2>
+
+<form method="post">
+  Name: <input name="name"><br>
+  Salary: <input name="salary" type="number"><br>
+  <button>Add</button>
+</form>
+
+<ul>
+{% for e in employees %}
+  <li>{{ e.name }} - R{{ e.salary }}
+      <a href="/payslip/{{ loop.index0 }}">Payslip</a>
+  </li>
+{% endfor %}
+</ul>
